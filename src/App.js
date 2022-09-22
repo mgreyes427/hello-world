@@ -8,6 +8,7 @@ import Example1 from './hooks/Example1';
 import Example2 from './hooks/Example2';
 import ComponentWithContext from './hooks/Example3';
 import Example4 from './hooks/Example4';
+import { AllCycles } from './hooks/lifecycle/AllCycles';
 
 function App() {
   return (
@@ -23,12 +24,13 @@ function App() {
         {/* <Example1></Example1> */}
         {/* <Example2></Example2> */}
         {/* <ComponentWithContext></ComponentWithContext> */}
-        <Example4 name='Martin'>
+        {/* <Example4 name='Martin'>
           <h3>
             Content of the props.children
-            {/* (tooked alwas as props.children var in the child) */}
+            (tooked alwas as props.children var in the child)
           </h3>
-        </Example4>
+        </Example4> */}
+        <AllCycles></AllCycles>
       </header>
     </div>
   );

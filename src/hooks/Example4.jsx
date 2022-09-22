@@ -7,10 +7,8 @@ export default function Example4(props) {
         <h2>
             Name: { props.name }
         </h2>
-        Children:
-        {/* { props.children } */}
-        Children2:
-        { props.childrena }
+        {/* any not pass in props will be treated as .children here */}
+        { props.children }
     </div>
   )
 }

@@ -1,14 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Greeting from './components/pure/greeting';
-import GreetingF from './components/pure/greetingF';
-import TaskListComponent from './components/container/task_list';
-import ContactList from './components/container/contact_list';
-import Example1 from './hooks/Example1';
-import Example2 from './hooks/Example2';
-import ComponentWithContext from './hooks/Example3';
-import Example4 from './hooks/Example4';
-import { AllCycles } from './hooks/lifecycle/AllCycles';
+import Clock from './hooks/Exercise456';
+// import Greeting from './components/pure/greeting';
+// import GreetingF from './components/pure/greetingF';
+// import TaskListComponent from './components/container/task_list';
+// import ContactList from './components/container/contact_list';
+// import Example1 from './hooks/Example1';
+// import Example2 from './hooks/Example2';
+// import ComponentWithContext from './hooks/Example3';
+// import Example4 from './hooks/Example4';
+// import { AllCycles } from './hooks/lifecycle/AllCycles';
+// import GreetingStyled from './components/pure/greetingStyled';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         {/* <TaskListComponent></TaskListComponent> */}
         {/* <ContactList></ContactList> */}
 
+        {/* ? Examples of hooks  */}
         {/* <Example1></Example1> */}
         {/* <Example2></Example2> */}
         {/* <ComponentWithContext></ComponentWithContext> */}
@@ -30,7 +33,12 @@ function App() {
             (tooked alwas as props.children var in the child)
           </h3>
         </Example4> */}
-        <AllCycles></AllCycles>
+        {/* <AllCycles></AllCycles> */}
+
+        {/* Exercise 4, 5, 6 */}
+        <Clock></Clock>
+
+        {/* <GreetingStyled name='Martin'></GreetingStyled> */}
       </header>
     </div>
   );

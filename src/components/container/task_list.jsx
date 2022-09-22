@@ -25,9 +25,7 @@ const TaskListComponent = () => {
     return (
         <div>
             <div>
-                <h1>
-                Your Tasks:
-                </h1>
+                <h1>Your Tasks:</h1>
             </div>
             {/* TODO: apply a for/map to render the list */}
             <TaskComponent task={ defaultTask }></TaskComponent>

@@ -1,9 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Clock from './hooks/Exercise456';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
-// import TaskListComponent from './components/container/task_list';
+import TaskListComponent from './components/container/task_list';
 // import ContactList from './components/container/contact_list';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
@@ -11,12 +10,13 @@ import Clock from './hooks/Exercise456';
 // import Example4 from './hooks/Example4';
 // import { AllCycles } from './hooks/lifecycle/AllCycles';
 // import GreetingStyled from './components/pure/greetingStyled';
+// import Clock from './hooks/Exercise456';
+import Father from './components/container/father';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
         {/* <Greeting name="Martin"></Greeting> */}
         {/* <GreetingF name="Martin"></GreetingF> */}
 
@@ -35,11 +35,16 @@ function App() {
         </Example4> */}
         {/* <AllCycles></AllCycles> */}
 
-        {/* Exercise 4, 5, 6 */}
-        <Clock></Clock>
+        {/* ? Exercise 4, 5, 6 */}
+        {/* <Clock></Clock> */}
 
         {/* <GreetingStyled name='Martin'></GreetingStyled> */}
-      </header>
+      {/* </header> */}
+
+      {/* <TaskListComponent></TaskListComponent> */}
+      
+      {/* ? Event manager */}
+      <Father></Father>
     </div>
   );
 }

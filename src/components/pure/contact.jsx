@@ -3,30 +3,56 @@ import PropTypes from 'prop-types';
 import { Contact } from '../../models/contact.class';
 
 
-const ContactComponent = ({ contact }) => {
+const ContactComponent = ({ contact, add, remove, changeConnect }) => {
 
-    const [is_connected, change_is_connected] = useState(contact.connected);
-
-    const change_connected_state = () => {
-        change_is_connected(!is_connected)
+    function connectedIcon(){
+        // Returns icon depending on completion of the task
+        if (contact.connected){
+            return <i
+                onClick={() => changeConnect(contact)}
+                className='bi-circle-fill task-action'
+                style={{color: 'green'}}
+            ></i>
+        } else {
+            return <i
+                onClick={() => changeConnect(contact)}
+                className='bi-circle-fill task-action'
+                style={{color: 'red'}}
+            ></i>
+        }
     }
 
     return (
-        <div>
-            <h5>First Name: { contact.first_name }</h5>
-            <h5>Last Name: { contact.last_name }</h5>
-            <h5>Email: { contact.email }</h5>
-            <h5>Connected: { is_connected ? 'Available contact' : 'Not available contact'}</h5>
-            <button onClick={ change_connected_state }>
-                Change connected state
-            </button>
-        </div>
+        <tr className='fw-normal'>
+            <td className='align-middle'>
+                <span>{ contact.firstName }</span>
+            </td>
+            <td className='align-middle'>
+                <span>{ contact.lastName }</span>
+            </td>
+            <td className='align-middle'>
+                <span>{ contact.email }</span>
+            </td>
+
+            <td className='align-middle'>
+                { connectedIcon() }
+                <i 
+                    onClick={() => remove(contact)}
+                    className='bi-trash task-action'
+                    style={{color: 'tomato'}}
+                ></i>
+            </td>
+            {/* <h5>Connected: { is_connected ? 'Available contact' : 'Not available contact'}</h5> */}
+        </tr>
     );
 };
 
 
 ContactComponent.propTypes = {
-    contact: PropTypes.instanceOf(Contact)
+    contact: PropTypes.instanceOf(Contact).isRequired,
+    add: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
+    changeConnect: PropTypes.func.isRequired,
 };
 
 

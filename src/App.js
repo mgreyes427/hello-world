@@ -11,7 +11,8 @@ import TaskListComponent from './components/container/task_list';
 // import { AllCycles } from './hooks/lifecycle/AllCycles';
 // import GreetingStyled from './components/pure/greetingStyled';
 // import Clock from './hooks/Exercise456';
-import Father from './components/container/father';
+// import Father from './components/container/father';
+import ContactList from './components/container/contact_list';
 
 function App() {
   return (
@@ -44,7 +45,10 @@ function App() {
       {/* <TaskListComponent></TaskListComponent> */}
       
       {/* ? Event manager */}
-      <Father></Father>
+      {/* <Father></Father> */}
+
+      {/* ? Exercise 7, 8, 9 */}
+        <ContactList></ContactList>
     </div>
   );
 }

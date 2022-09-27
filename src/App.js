@@ -3,7 +3,6 @@ import './App.css';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
-// import ContactList from './components/container/contact_list';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
 // import ComponentWithContext from './hooks/Example3';
@@ -12,7 +11,9 @@ import TaskListComponent from './components/container/task_list';
 // import GreetingStyled from './components/pure/greetingStyled';
 // import Clock from './hooks/Exercise456';
 // import Father from './components/container/father';
-import ContactList from './components/container/contact_list';
+// import ContactList from './components/container/contact_list';
+import OptionalRender from './components/pure/optionalRender';
+import Rectangle from './components/pure/rectangle';
 
 function App() {
   return (
@@ -41,14 +42,21 @@ function App() {
 
         {/* <GreetingStyled name='Martin'></GreetingStyled> */}
       {/* </header> */}
-
-      {/* <TaskListComponent></TaskListComponent> */}
       
       {/* ? Event manager */}
       {/* <Father></Father> */}
 
-      {/* ? Exercise 7, 8, 9 */}
-        <ContactList></ContactList>
+      {/* ? Exercises 7, 8, 9 */}
+      {/* <ContactList></ContactList> */}
+
+      {/* Coditional render examples */}
+      {/* <OptionalRender></OptionalRender> */}
+
+      {/* Exercies 10, 11, 12 */}
+      <Rectangle intervalTimeInSeconds={0.5}></Rectangle>
+
+      {/* Final project */}
+      {/* <TaskListComponent></TaskListComponent> */}
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import { Task } from '../../models/task.class';
+import { LEVELS } from '../../models/levels.enum';
 
 import './../../styles/task.scss';
-import { LEVELS } from '../../models/levels.enum';
 
 
 const TaskComponent = ({ task, complete, remove }) => {
@@ -55,8 +56,19 @@ const TaskComponent = ({ task, complete, remove }) => {
         }
     }
 
+    const taskCompleted = {
+        color: 'gray',
+        textDecoration: 'line-through',
+        fontWeight: 'bold',
+    }
+    const taskPending = {
+        fontWeight: 'bold',
+        color: 'tomato',
+    }
+
     return (
-        <tr className='fw-normal'>
+        // if you require two classNames could replace by styles as this
+        <tr className='fw-normal' style={task.completed ? taskCompleted: taskPending}>
             <th>
                 <span className='ms-2'>{ task.name }</span>
             </th>

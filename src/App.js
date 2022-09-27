@@ -3,6 +3,8 @@ import './App.css';
 // import Greeting from './components/pure/greeting';
 // import GreetingF from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
+import LoginFormik from './components/pure/forms/loginFormik';
+import RegisterFormik from './components/pure/forms/registerFormik';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
 // import ComponentWithContext from './hooks/Example3';
@@ -12,8 +14,8 @@ import TaskListComponent from './components/container/task_list';
 // import Clock from './hooks/Exercise456';
 // import Father from './components/container/father';
 // import ContactList from './components/container/contact_list';
-import OptionalRender from './components/pure/optionalRender';
-import Rectangle from './components/pure/rectangle';
+// import OptionalRender from './components/pure/optionalRender';
+// import Rectangle from './components/pure/rectangle';
 
 function App() {
   return (
@@ -53,7 +55,11 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
 
       {/* Exercies 10, 11, 12 */}
-      <Rectangle intervalTimeInSeconds={0.5}></Rectangle>
+      {/* <Rectangle intervalTimeInSeconds={0.5}></Rectangle> */}
+
+      {/* Examples of Formik and Yup */}
+      {/* <LoginFormik></LoginFormik> */}
+      <RegisterFormik></RegisterFormik>
 
       {/* Final project */}
       {/* <TaskListComponent></TaskListComponent> */}

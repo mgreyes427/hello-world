@@ -13,7 +13,7 @@ const loginSchema = Yup.object().shape({
 });
 
 
-const LoginFormik = () => {
+const LoginFormik = ({ loginFunc }) => {
 
     const initialCredentials = {
         email: '',
@@ -32,7 +32,8 @@ const LoginFormik = () => {
                     await new Promise((r) => setTimeout(r, 1000));
                     alert(JSON.stringify(values, null, 2));
                     // Save the credentials on localStorage of the browser
-                    localStorage.setItem('credentials', values);
+                    localStorage.setItem('credentials', JSON.stringify(values));
+                    loginFunc(true);  // TODO: is not a pretty way...
                     navigate('/profile');
                 }}
             >

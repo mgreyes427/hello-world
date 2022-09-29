@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppRoutingOne from './AppRoutingOne';
 import AppRoutingTwo from './AppRoutingTwo';
+import AppRoutingFinal from './AppRoutingFinal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
     {/* ? There are two ways of make the routing */}
     {/* <AppRoutingOne /> */}
     <AppRoutingTwo />
+    {/* <AppRoutingFinal /> */}
 
   </React.StrictMode>
 );

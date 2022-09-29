@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink, Navigate, useParams } from "react-router-dom";
 import HomePage from './pages/home/HomePage';
 import NotFoundPage from './pages/404/NotFoundPage';
@@ -9,13 +9,14 @@ import TasksDetailPage from './pages/tasks/TaskDetailPage';
 import LoginPage from './pages/auth/LoginPage';
 import TaskDetailPage from './pages/tasks/TaskDetailPage';
 import StatePage from './pages/home/StatePage';
+import RegisterPage from './pages/auth/RegisterPage';
 
 
 const ProtectedPage = ({children, condition, redirectTo}) => {
     if(condition){
        return children; 
     } else {
-        alert('You must be logged in. Redirecting to home...');
+        alert('You must be logged in. Redirecting...');
         return <Navigate to={ redirectTo } />
     }
 }
@@ -28,18 +29,20 @@ const GetTaskDetailPage = ({ tasks }) => {
 
 const AppRoutingTwo = () => {
 
-    let logged = false;
+    const [logged, setLogged] = useState(false);
     let taskList = [
         { id: 1, name: 'Task 1', description: 'My first Task'},
         { id: 2, name: 'Task 2', description: 'My second Task'},
         { id: 3, name: 'Task 3', description: 'My third Task'},
     ];
-    let mystate = useParams();
 
 
     useEffect(() => {
-        logged = localStorage.getItem('credentials');
-        console.log('User Logged? ', logged)
+        setLogged(localStorage.getItem('credentials') != null);
+        console.log('User Logged? ', logged);
+        // ? Example to read the values
+        // let credentials = JSON.parse(localStorage.getItem('credentials'));
+        // console.log('Email logged? ', credentials.email);
     }, []);
 
     return (
@@ -47,13 +50,14 @@ const AppRoutingTwo = () => {
             <div>
                 <nav>
                     {/* TODO: Not working AvtiveClassName or style */}
-                    <NavLink to='/' style={({ isActive }) => {return {color: isActive ? 'red' : 'black' }}}>|| HOME |</NavLink>
-                    <NavLink to='about'>| ABOUT |</NavLink>
-                    <NavLink to='faqs'>| FAQs |</NavLink>
-                    <NavLink to='task/1'>| Task 1 |</NavLink>
-                    <NavLink to='task/2'>| Task 2 |</NavLink>
-                    <NavLink to='any404'>| Not existing route |</NavLink>
-                    <NavLink to='login'>| Login ||</NavLink>
+                    <NavLink to='/' style={({ isActive }) => {return {color: isActive ? 'red' : 'black' }}}>|| HOME </NavLink>
+                    <NavLink to='about'>| ABOUT </NavLink>
+                    <NavLink to='faqs'>| FAQs </NavLink>
+                    <NavLink to='task/1'>| Task 1 </NavLink>
+                    <NavLink to='task/2'>| Task 2 </NavLink>
+                    <NavLink to='any404'>| Not existing route </NavLink>
+                    { !logged && <NavLink to='login'>| LogIn |</NavLink> }
+                    { !logged && <NavLink to='signup'>| SignUp |</NavLink> }
                     
                 </nav>
 
@@ -65,7 +69,15 @@ const AppRoutingTwo = () => {
                             path='login'
                             element={
                                 <ProtectedPage condition={!logged} redirectTo='/'>
-                                    <LoginPage />
+                                    <LoginPage loginFunc={ setLogged } />
+                                </ProtectedPage>
+                            }
+                        />
+                        <Route
+                            path='signup'
+                            element={
+                                <ProtectedPage condition={!logged} redirectTo='/'>
+                                    <RegisterPage />
                                 </ProtectedPage>
                             }
                         />

@@ -5,11 +5,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppRoutingOne from './AppRoutingOne';
+import AppRoutingTwo from './AppRoutingTwo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    {/* ? There are two ways of make the routing */}
+    {/* <AppRoutingOne /> */}
+    <AppRoutingTwo />
+
   </React.StrictMode>
 );
 

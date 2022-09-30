@@ -12,10 +12,10 @@ import AppRoutingFinal from './AppRoutingFinal';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* ? There are two ways of make the routing */}
     {/* <AppRoutingOne /> */}
-    <AppRoutingTwo />
+    {/* <AppRoutingTwo /> */}
     {/* <AppRoutingFinal /> */}
 
   </React.StrictMode>

@@ -5,6 +5,8 @@ import './App.css';
 import TaskListComponent from './components/container/task_list';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
+import AsyncExample from './components/pure/AsyncExample';
+import ObservableExample from './components/pure/ObservableExample';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
 // import ComponentWithContext from './hooks/Example3';
@@ -61,8 +63,12 @@ function App() {
       {/* <LoginFormik></LoginFormik> */}
       {/* <RegisterFormik></RegisterFormik> */}
 
+      {/* Async process examples */}
+      {/* <AsyncExample></AsyncExample> */}
+      <ObservableExample></ObservableExample>
+
       {/* Final project */}
-      <TaskListComponent></TaskListComponent>
+      {/* <TaskListComponent></TaskListComponent> */}
     </div>
   );
 }

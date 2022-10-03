@@ -9,6 +9,7 @@ import AsyncExample from './components/pure/AsyncExample';
 import ObservableExample from './components/pure/ObservableExample';
 import FetchExample from './components/pure/FetchExample';
 import AxiosExample from './components/pure/AxiosExample';
+import ChuckNorrisJokes from './components/pure/ChuckNorrisJokes';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
 // import ComponentWithContext from './hooks/Example3';
@@ -69,7 +70,10 @@ function App() {
       {/* <AsyncExample></AsyncExample> */}
       {/* <ObservableExample></ObservableExample> */}
       {/* <FetchExample></FetchExample> */}
-      <AxiosExample></AxiosExample>
+      {/* <AxiosExample></AxiosExample> */}
+
+      {/* Exercies 19, 20, 21 */}
+      <ChuckNorrisJokes></ChuckNorrisJokes>
 
       {/* Final project */}
       {/* <TaskListComponent></TaskListComponent> */}

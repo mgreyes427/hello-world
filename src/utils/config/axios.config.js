@@ -1,9 +1,17 @@
 import axios from 'axios';
 
 // Default config for axios
-export default axios.create(
+export const APIRequest = axios.create(
     {
         baseURL: 'https://randomuser.me/api',
+        responseType: 'json',
+        timeout: 6000,
+    }
+);
+
+export const ChuckNorrisJokesAPI = axios.create(
+    {
+        baseURL: 'https://api.chucknorris.io',
         responseType: 'json',
         timeout: 6000,
     }

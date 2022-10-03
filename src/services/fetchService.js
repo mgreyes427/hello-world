@@ -3,7 +3,7 @@ export const getAllUsers = async () => {
     console.log('Response: ', response);
     console.log('Status: ', response.status);
     console.log('ok? ', response.ok);
-    return response.json()
+    return response.json();
 }
 
 export const getAllPagedUsers = async (page) => {
@@ -11,7 +11,7 @@ export const getAllPagedUsers = async (page) => {
     console.log('Response: ', response);
     console.log('Status: ', response.status);
     console.log('ok? ', response.ok);
-    return response.json()
+    return response.json();
 }
 
 export const getUserDetails = async (id) => {
@@ -19,5 +19,26 @@ export const getUserDetails = async (id) => {
     console.log('Response: ', response);
     console.log('Status: ', response.status);
     console.log('ok? ', response.ok);
-    return response.json()
+    return response.json();
+}
+
+export const login = async (email, password) => {
+    let body = {
+        email: email,  // it is the same as 'email: email'
+        password: password,
+    }
+    let response = await fetch(`https://reqres.in/api/login`, {
+        method: 'POST',
+        // mode: 'no-cors',
+        // credentials: 'omit',
+        // cache: 'no-cache',
+        // headers: {
+        //     'Content-type': 'application/json',
+        // },
+        body: JSON.stringify(body),
+    });
+    console.log('Response: ', response);
+    console.log('Status: ', response.status);
+    console.log('ok? ', response.ok);
+    return response.json();
 }

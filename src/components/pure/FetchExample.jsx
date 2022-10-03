@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllUsers, getAllPagedUsers, getUserDetails } from '../../services/fetchService';
+import { getAllUsers, getAllPagedUsers, getUserDetails, login } from '../../services/fetchService';
 
 const FetchExample = () => {
 
@@ -65,8 +65,23 @@ const FetchExample = () => {
             });
     }
 
+    const authUser = () => {
+        login('eve.holt@reqres.in', 'cityslicka')
+            .then((response) => {
+                console.log('Token: ', response.token);
+                sessionStorage.setItem('token', response.token);
+            })
+            .catch((error) => {
+                alert(`Error while login user: ${error}`);
+            })
+            .finally(() => {
+                console.log('Ended login user. Navigate to home...');
+            });
+    }
+
     return (
         <div>
+            <button onClick={ authUser }>Auth User</button>
             <h2>Users:</h2>
             { users.map((user, index) => (
                 <p key={index} onClick={() => obtainUserDetails(user.id)}>
@@ -77,15 +92,15 @@ const FetchExample = () => {
             <button onClick={ () => obtainPagedUsers(1) }>1</button>
             <button onClick={ () => obtainPagedUsers(2) }>2</button>
             <div>
-                <h3>User Details</h3>
-                { selectedUser && (
+                { selectedUser ? (
                     <div>
+                        <h3>User Details</h3>
                         <p>Name: {selectedUser.first_name}</p>
                         <p>Last Name: {selectedUser.last_name}</p>
                         <p>email: {selectedUser.email}</p>
-                        <img alt='Avatar' src={ selectedUser.avatar } style={{height: '50px', width: '50px'}} />
+                        <img alt='Avatar' src={ selectedUser.avatar } style={{height: '150px', width: '150px'}} />
                     </div>
-                )}
+                ) : (<h6>Please click on a User to see its details</h6>)}
             </div>
         </div>
     );

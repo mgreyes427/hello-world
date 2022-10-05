@@ -11,14 +11,14 @@ import AppRoutingFinal from './AppRoutingFinal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
     {/* ? There are two ways of make the routing */}
     {/* <AppRoutingOne /> */}
     {/* <AppRoutingTwo /> */}
     {/* <AppRoutingFinal /> */}
 
-  </React.StrictMode>
+  </React.Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function
